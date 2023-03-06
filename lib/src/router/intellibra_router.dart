@@ -5,6 +5,7 @@ import 'package:intellibra/src/features/onboarding/onboarding.dart';
 import 'package:intellibra/src/features/records/medical_records.dart';
 import 'package:intellibra/src/features/scan/home.dart';
 import 'package:intellibra/src/features/scan/self_exam.dart';
+import 'package:intellibra/src/features/settings/settings.dart';
 
 @AdaptiveAutoRouter(
   replaceInRouteName: 'Page,Route',
@@ -42,6 +43,10 @@ import 'package:intellibra/src/features/scan/self_exam.dart';
         AutoRoute(
           page: IntelliRecords,
           path: 'medical-records',
+        ),
+        AutoRoute(
+          page: Settings,
+          path: 'settings',
         ),
       ],
     ),
