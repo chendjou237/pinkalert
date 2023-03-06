@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:intellibra/src/configs/palette.dart';
+import 'package:intellibra/src/router/intellibra_router.gr.dart' as routes;
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -11,10 +12,9 @@ class Home extends StatelessWidget {
     return SafeArea(
       child: AutoTabsScaffold(
         routes: const [
-          // collectX(),
-          // SelfCheck(),
-          // Awareness(),
-          // Records(),
+          routes.SelfCheck(),
+          routes.Awareness(),
+          routes.IntelliRecords(),
         ],
         builder: (context, child, animation) => ScaleTransition(
           scale: animation,
@@ -29,13 +29,6 @@ class Home extends StatelessWidget {
             onTap: (index) => router.setActiveIndex(index),
             type: BottomNavigationBarType.fixed,
             items: const [
-              BottomNavigationBarItem(
-                icon: Icon(
-                  IconlyBroken.scan,
-                  size: 18,
-                ),
-                label: 'collectX',
-              ),
               BottomNavigationBarItem(
                 icon: Icon(
                   IconlyBroken.heart,
