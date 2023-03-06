@@ -14,6 +14,7 @@ class Home extends StatelessWidget {
           routes.SelfCheck(),
           routes.Awareness(),
           routes.IntelliRecords(),
+          routes.Settings(),
         ],
         builder: (context, child, animation) => ScaleTransition(
           scale: animation,
@@ -50,6 +51,14 @@ class Home extends StatelessWidget {
                 ),
                 // backgroundColor: Palette.dark,
                 label: 'records',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  IconlyBroken.user_2,
+                  size: 18,
+                ),
+                // backgroundColor: Palette.dark,
+                label: 'profile',
               ),
             ],
           );
