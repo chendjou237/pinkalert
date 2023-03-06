@@ -26,17 +26,6 @@ class _CreateAccountState extends State<CreateAccount> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text('Creer un event'),
-      //   actions: [
-      //     TextButton(
-      //       onPressed: () {
-      //         context.router.pop();
-      //       },
-      //       child: const Text("Annuler"),
-      //     ),
-      //   ],
-      // ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 14),
         child: Column(
@@ -60,7 +49,7 @@ class _CreateAccountState extends State<CreateAccount> {
             ),
             IntellibraButton(
               action: _isLastPage ? _submitForm : _nextPage,
-              text: _isLastPage ? 'Valider' : 'Continuer',
+              text: _isLastPage ? 'Confirm' : 'Continue',
             ),
             if (_currentPageIndex != 0)
               TextButton(
@@ -70,7 +59,7 @@ class _CreateAccountState extends State<CreateAccount> {
                     curve: Curves.easeInOut,
                   );
                 },
-                child: const Text('Retour'),
+                child: const Text('Back'),
               )
             else
               const SizedBox.shrink(),
@@ -94,15 +83,11 @@ class _CreateAccountState extends State<CreateAccount> {
             // Dropdown menu for language
             Expanded(
               child: DropdownButtonFormField<String>(
-                // leadingIcon: const Icon(Hicons.work_bold),
-                // menuStyle: MenuStyle(),
-                // trailingIcon: const Icon(Hicons.arrow_swap_vertical),
                 value: 'Francais',
-
                 decoration: const InputDecoration(
                   //  prefixIcon: Icon(Icons.language),
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.all(0),
+                  //contentPadding: EdgeInsets.all(0),
                   hintText: 'Francais',
                 ),
                 onChanged: (language) {},
@@ -127,7 +112,7 @@ class _CreateAccountState extends State<CreateAccount> {
               width: 100,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: context.scheme.secondary.withOpacity(.5),
+                color: context.scheme.primary.withOpacity(.5),
               ),
               child: Icon(
                 Hicons.profile_circle,
@@ -141,39 +126,30 @@ class _CreateAccountState extends State<CreateAccount> {
               child: Icon(
                 Icons.add_a_photo_outlined,
                 size: 24,
-                color: context.scheme.secondary.withOpacity(.75),
+                color: context.scheme.primary.withOpacity(.75),
               ),
             ),
-            // Center(child: Image.asset("assets/icons/bg.png")),
-            // Positioned(
-            //   top: -2,
-            //   right: 127.5,
-            //   child: Center(
-            //     child: Image.asset(
-            //       "assets/icons/add-user-image.png",
-            //       // color: Colors.blue,
-            //     ),
-            //   ),
-            // ),
           ],
         ),
         14.vGap,
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 34),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 34),
           child: Text(
-            'Ajouter votre photo de profil ou le logo de votre entreprise',
+            'Add a profile picture or choose an avatar',
+            style: context.theme.textTheme.bodySmall,
           ),
         ),
-        14.vGap,
-        Center(
-          child: Text(
-            'Entrez votre vrai Nom de Naissance',
-            style: context.theme.textTheme.bodyLarge,
-          ),
+        34.vGap,
+        Row(
+          children: [
+            Text(
+              'Enter your names',
+              style: context.theme.textTheme.bodyLarge,
+            ),
+          ],
         ),
-        //  4.vGap,
         IntelliInput(
-          label: 'Noms de naissance',
+          label: 'Names',
           hint: 'Lady Bug Miraculous',
           controller: TextEditingController(),
           obscureText: false,
@@ -197,15 +173,11 @@ class _CreateAccountState extends State<CreateAccount> {
             // Dropdown menu for language
             Expanded(
               child: DropdownButtonFormField<String>(
-                // leadingIcon: const Icon(Hicons.work_bold),
-                // menuStyle: MenuStyle(),
-                // trailingIcon: const Icon(Hicons.arrow_swap_vertical),
                 value: 'Francais',
-
                 decoration: const InputDecoration(
                   //  prefixIcon: Icon(Icons.language),
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.all(0),
+                  //contentPadding: EdgeInsets.all(0),
                   hintText: 'Francais',
                 ),
                 onChanged: (language) {},
@@ -232,7 +204,7 @@ class _CreateAccountState extends State<CreateAccount> {
         4.vGap,
         const Center(
           child: Text(
-            'Entrez votre code secret',
+            'Enter your secret code',
             style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
           ),
         ),
@@ -244,7 +216,7 @@ class _CreateAccountState extends State<CreateAccount> {
         ListTile(
           horizontalTitleGap: 0,
           title: Text(
-            'Utilisez votre empreinte comme mode de déverrouillage',
+            'Use fingerprint authentication',
             style: context.theme.textTheme.bodySmall,
           ),
           leading: const Icon(Icons.fingerprint),
@@ -272,15 +244,11 @@ class _CreateAccountState extends State<CreateAccount> {
             // Dropdown menu for language
             Expanded(
               child: DropdownButtonFormField<String>(
-                // leadingIcon: const Icon(Hicons.work_bold),
-                // menuStyle: MenuStyle(),
-                // trailingIcon: const Icon(Hicons.arrow_swap_vertical),
                 value: 'Francais',
-
                 decoration: const InputDecoration(
                   //  prefixIcon: Icon(Icons.language),
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.all(0),
+                  //contentPadding: EdgeInsets.all(0),
                   hintText: 'Francais',
                 ),
                 onChanged: (language) {},
@@ -307,7 +275,7 @@ class _CreateAccountState extends State<CreateAccount> {
         4.vGap,
         const Center(
           child: Text(
-            'Verifiez votre code secret',
+            'Verify your secret code',
             style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
           ),
         ),
@@ -319,7 +287,7 @@ class _CreateAccountState extends State<CreateAccount> {
         ListTile(
           horizontalTitleGap: 0,
           title: Text(
-            'Utilisez votre empreinte comme mode de déverrouillage',
+            'Use fingerprint authentication',
             style: context.theme.textTheme.bodySmall,
           ),
           leading: const Icon(Icons.fingerprint),
