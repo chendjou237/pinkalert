@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:collectX/src/utils/palette.dart';
+import 'package:intellibra/src/configs/configs.dart';
 
 class TradeMark extends StatelessWidget {
   const TradeMark({super.key});
@@ -10,10 +10,8 @@ class TradeMark extends StatelessWidget {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
@@ -27,7 +25,7 @@ class TradeMark extends StatelessWidget {
               Text(
                 'Bra',
                 style: GoogleFonts.besley(
-                  color: Palette.tertiary,
+                  color: Palette.secondaryTextColor,
                   fontSize: 18,
                 ),
               ),
