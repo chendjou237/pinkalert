@@ -17,7 +17,10 @@ class ActionLabel extends StatelessWidget {
         radius: 18,
         child: Icon(icon),
       ),
-      title: Text(label),
+      title: Text(
+        label,
+        //style: context.theme.textTheme.bodyMedium,
+      ),
       onTap: onTap,
       trailing: const Icon(
         Icons.chevron_right,

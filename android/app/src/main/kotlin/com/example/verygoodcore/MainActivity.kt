@@ -1,4 +1,4 @@
-package com.example.verygoodcore.intellibra
+package org.xenora.intellibra
 
 import io.flutter.embedding.android.FlutterActivity
 
