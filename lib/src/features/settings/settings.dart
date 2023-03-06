@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hicons/flutter_hicons.dart';
 import 'package:intellibra/src/common/common.dart';
+import 'package:intellibra/src/common/widgets/mark.dart';
 import 'package:intellibra/src/extensions/build_context.dart';
 import 'package:intellibra/src/extensions/num.dart';
 import 'package:intellibra/src/features/settings/widgets/action_tile.dart';
@@ -17,7 +18,7 @@ class Settings extends StatelessWidget {
           children: [
             34.vGap,
             const Center(
-              child: FlutterLogo(),
+              child: TradeMark(),
             ),
             4.vGap,
             Center(
