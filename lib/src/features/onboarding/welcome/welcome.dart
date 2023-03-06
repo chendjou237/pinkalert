@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intellibra/src/common/common.dart';
@@ -14,21 +13,6 @@ class Welcome extends StatelessWidget {
     return BlocBuilder<ThemeCubit, bool>(
       builder: (BuildContext context, bool state) {
         return Scaffold(
-          //backgroundColor: context.scheme.background,
-          appBar: AppBar(
-            title: const Text('Intellibra Widgets'),
-            actions: [
-              CupertinoSwitch(
-                value: state,
-                activeColor: context.scheme.tertiary,
-                onChanged: (theme) {
-                  state == true
-                      ? context.read<ThemeCubit>().reset()
-                      : context.read<ThemeCubit>().toggle();
-                },
-              ),
-            ],
-          ),
           body: Column(
             children: [
               Container(
@@ -91,7 +75,7 @@ class Welcome extends StatelessWidget {
                       ),
                       TextButton(
                         onPressed: () {
-                          context.router.pushNamed('/signup');
+                          context.router.pushNamed('/create-account');
                         },
                         // icon: const Icon(Icons.add),
                         child: Text(
