@@ -7,53 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:602426551207:android:e09776a6f87224b9fc6482",
+        "mobilesdk_app_id": "1:602426551207:android:360824a3dc9771befc6482",
         "android_client_info": {
-          "package_name": "anora.intellibra.app.intellibra"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "602426551207-c7rbmmquurjcihukqtu3pv707nrh2as3.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "anora.intellibra.app.intellibra",
-            "certificate_hash": "03fe01eb51487cdcb22dab4fcfbc8c27caa4bf86"
-          }
-        },
-        {
-          "client_id": "602426551207-isedolv1oorg3u1lufkt97o4grvpb0oo.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBbvj4BpjWr_i1LCG8GbEJksnje1PQf7yA"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "602426551207-isedolv1oorg3u1lufkt97o4grvpb0oo.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "602426551207-alm0es0ctd0vu425o8578em0evc3ldok.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "anora.intellibra.app.intellibra"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:602426551207:android:d94f4bcedc783799fc6482",
-        "android_client_info": {
-          "package_name": "com.example.verygoodcore.intellibra"
+          "package_name": "org.xenora.intellibra"
         }
       },
       "oauth_client": [
@@ -75,10 +31,10 @@
               "client_type": 3
             },
             {
-              "client_id": "602426551207-alm0es0ctd0vu425o8578em0evc3ldok.apps.googleusercontent.com",
+              "client_id": "602426551207-4t4a6vc6erdcnb5npvqubu1ejkhlsm8q.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "anora.intellibra.app.intellibra"
+                "bundle_id": "org.xenora.intellibra.intellibra"
               }
             }
           ]
