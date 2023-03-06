@@ -2,7 +2,7 @@
 // ignore_for_file: lines_longer_than_80_chars, avoid_classes_with_only_static_members
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
-    show defaultTargetPlatform, kIsWeb, TargetPlatform;
+    show TargetPlatform, defaultTargetPlatform, kIsWeb;
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -70,8 +70,10 @@ class DefaultFirebaseOptions {
     messagingSenderId: '602426551207',
     projectId: 'intellibra-ecb00',
     storageBucket: 'intellibra-ecb00.appspot.com',
-    androidClientId: '602426551207-c7rbmmquurjcihukqtu3pv707nrh2as3.apps.googleusercontent.com',
-    iosClientId: '602426551207-4t4a6vc6erdcnb5npvqubu1ejkhlsm8q.apps.googleusercontent.com',
+    androidClientId:
+        '602426551207-c7rbmmquurjcihukqtu3pv707nrh2as3.apps.googleusercontent.com',
+    iosClientId:
+        '602426551207-4t4a6vc6erdcnb5npvqubu1ejkhlsm8q.apps.googleusercontent.com',
     iosBundleId: 'org.xenora.intellibra.intellibra',
   );
 }
