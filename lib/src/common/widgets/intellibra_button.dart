@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:intellibra/src/configs/palette.dart';
 import 'package:intellibra/src/configs/intellibra_constants.dart';
-import 'package:intellibra/src/features/extensions/build_context.dart';
-import 'package:intellibra/src/features/extensions/num.dart';
+import 'package:intellibra/src/configs/palette.dart';
+import 'package:intellibra/src/extensions/build_context.dart';
+import 'package:intellibra/src/extensions/num.dart';
 
 class IntellibraButton extends StatelessWidget {
   const IntellibraButton({
