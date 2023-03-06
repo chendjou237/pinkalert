@@ -2,7 +2,7 @@
 // ignore_for_file: lines_longer_than_80_chars, avoid_classes_with_only_static_members
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
-    show TargetPlatform, defaultTargetPlatform, kIsWeb;
+    show defaultTargetPlatform, kIsWeb, TargetPlatform;
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -48,17 +48,17 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyDWGo35-3ufP8xs65FY31dXx_h0bGxfIag',
-    appId: '1:602426551207:web:d70e784e57ce8d2ffc6482',
+    appId: '1:602426551207:web:9a3e30074355d91cfc6482',
     messagingSenderId: '602426551207',
     projectId: 'intellibra-ecb00',
     authDomain: 'intellibra-ecb00.firebaseapp.com',
     storageBucket: 'intellibra-ecb00.appspot.com',
-    measurementId: 'G-BE0LFEC6Q3',
+    measurementId: 'G-6CF7F7HWC8',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBbvj4BpjWr_i1LCG8GbEJksnje1PQf7yA',
-    appId: '1:602426551207:android:d94f4bcedc783799fc6482',
+    appId: '1:602426551207:android:360824a3dc9771befc6482',
     messagingSenderId: '602426551207',
     projectId: 'intellibra-ecb00',
     storageBucket: 'intellibra-ecb00.appspot.com',
@@ -66,14 +66,12 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyCbDiY37f54GsHu4ps4szNJDam5YU0RUf0',
-    appId: '1:602426551207:ios:3d70c4dfc91ab2b2fc6482',
+    appId: '1:602426551207:ios:532aa0a5cbd4d009fc6482',
     messagingSenderId: '602426551207',
     projectId: 'intellibra-ecb00',
     storageBucket: 'intellibra-ecb00.appspot.com',
-    androidClientId:
-        '602426551207-c7rbmmquurjcihukqtu3pv707nrh2as3.apps.googleusercontent.com',
-    iosClientId:
-        '602426551207-4t4a6vc6erdcnb5npvqubu1ejkhlsm8q.apps.googleusercontent.com',
+    androidClientId: '602426551207-c7rbmmquurjcihukqtu3pv707nrh2as3.apps.googleusercontent.com',
+    iosClientId: '602426551207-4t4a6vc6erdcnb5npvqubu1ejkhlsm8q.apps.googleusercontent.com',
     iosBundleId: 'org.xenora.intellibra.intellibra',
   );
 }
