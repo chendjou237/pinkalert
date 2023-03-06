@@ -1,6 +1,10 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:intellibra/src/features/awareness/screens/awareness.dart';
 
 import 'package:intellibra/src/features/onboarding/onboarding.dart';
+import 'package:intellibra/src/features/records/medical_records.dart';
+import 'package:intellibra/src/features/scan/home.dart';
+import 'package:intellibra/src/features/scan/self_exam.dart';
 
 @AdaptiveAutoRouter(
   replaceInRouteName: 'Page,Route',
@@ -17,6 +21,24 @@ import 'package:intellibra/src/features/onboarding/onboarding.dart';
     AutoRoute(
       page: ChooseTheme,
       path: '/choose-theme',
+    ),
+    AutoRoute(
+      page: Home,
+      path: '/home',
+      children: [
+        AutoRoute(
+          page: SelfCheck,
+          path: 'self-check',
+        ),
+        AutoRoute(
+          page: Awareness,
+          path: 'awareness',
+        ),
+        AutoRoute(
+          page: IntelliRecords,
+          path: 'medical-records',
+        ),
+      ],
     ),
   ],
 )
