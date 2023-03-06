@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hicons/flutter_hicons.dart';
+import 'package:iconly/iconly.dart';
+import 'package:intellibra/src/app/assets.dart';
 import 'package:intellibra/src/common/common.dart';
 import 'package:intellibra/src/common/widgets/mark.dart';
 import 'package:intellibra/src/extensions/build_context.dart';
@@ -17,8 +19,8 @@ class Settings extends StatelessWidget {
         child: Column(
           children: [
             34.vGap,
-            const Center(
-              child: TradeMark(),
+            Center(
+              child: Image.asset(Assets.assetsIconsWomanPp),
             ),
             4.vGap,
             Center(
@@ -29,7 +31,7 @@ class Settings extends StatelessWidget {
             ),
             14.vGap,
             const IntellibraButton(
-              text: 'Action',
+              text: 'Edit Profile',
             ),
             34.vGap,
             Row(
@@ -38,7 +40,7 @@ class Settings extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(8),
                   child: Text(
-                    'Akila actions',
+                    'Intellibra actions',
                     style: context.theme.textTheme.bodyMedium,
                   ),
                 ),
@@ -52,13 +54,13 @@ class Settings extends StatelessWidget {
               ],
             ),
             ActionLabel(
-              label: 'Recharger mon compte AKILA',
+              label: 'Intellibra scans',
               onTap: () {},
-              icon: Icons.add,
+              icon: IconlyBroken.heart,
             ),
             ActionLabel(
-              icon: Hicons.refresh_1,
-              label: 'Historique Transactions',
+              icon: Hicons.lock_1,
+              label: 'Pin code',
               onTap: () {},
             ),
             ActionLabel(
@@ -77,7 +79,7 @@ class Settings extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(8),
                   child: Text(
-                    'Aide et Contacts',
+                    'Usage',
                     style: context.theme.textTheme.bodyMedium,
                   ),
                 ),
@@ -91,42 +93,21 @@ class Settings extends StatelessWidget {
               ],
             ),
             ActionLabel(
-              icon: Hicons.profile_accepted_2,
-              label: 'Devenir partenaire',
-              onTap: () {},
-            ),
-            ActionLabel(
-              icon: Hicons.upload,
-              label: "Partager l'application",
-              onTap: () {},
-            ),
-            ActionLabel(
-              icon: Hicons.shield_tick,
-              label: 'Politique de confidentialité',
-              onTap: () {},
-            ),
-            ActionLabel(
-              icon: Hicons.work,
-              label: 'Nous contacter',
-              onTap: () {},
+              icon: IconlyBroken.work,
+              label: 'Temrs & Conditions',
+              onTap: () {
+                context.router.pushNamed('/home');
+              },
             ),
             ActionLabel(
               icon: Hicons.information_square,
-              label: 'A propos',
+              label: 'Infos',
               onTap: () {
                 context.router.pushNamed('/home');
               },
             ),
             34.vGap,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                //  Image.asset(Assets.assetsIconsMascotte),
-                Text(
-                  'Intellibra',
-                ),
-              ],
-            ),
+            const TradeMark(),
             8.vGap
           ],
         ),
