@@ -9,8 +9,11 @@ environment:
 dependencies:
   auto_route: ^5.0.4
   bloc: ^8.1.1
+  cloud_firestore: ^4.4.3
   collection: ^1.17.0
   dartz: ^0.10.1
+  firebase_auth: ^4.2.9
+  firebase_core: ^2.7.0
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.2
