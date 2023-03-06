@@ -42,3 +42,14 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+icons_launcher:
+  image_path: "assets/icons/app-icon.png"
+  platforms:
+    android:
+      enable: true
+    ios:
+      enable: true
+flutter_assets:
+  assets_path: assets/
+  output_path: lib/src/app/
+  filename: assets.dart
