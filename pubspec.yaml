@@ -42,6 +42,10 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+  assets:
+    - assets/
+    - assets/icons/
+    - assets/images/
 icons_launcher:
   image_path: "assets/icons/app-icon.png"
   platforms:
