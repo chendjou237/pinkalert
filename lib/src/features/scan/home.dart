@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
-import 'package:intellibra/src/configs/palette.dart';
 import 'package:intellibra/src/router/intellibra_router.gr.dart' as routes;
 
 class Home extends StatelessWidget {
@@ -22,9 +21,9 @@ class Home extends StatelessWidget {
         ),
         bottomNavigationBuilder: (context, router) {
           return BottomNavigationBar(
-            elevation: 12,
-            selectedItemColor: Palette.primary,
-            unselectedItemColor: Palette.primary.withOpacity(.55),
+            //elevation: 12,
+            // selectedItemColor: Palette.primary,
+            //unselectedItemColor: Palette.primary.withOpacity(.55),
             currentIndex: router.activeIndex,
             onTap: (index) => router.setActiveIndex(index),
             type: BottomNavigationBarType.fixed,
