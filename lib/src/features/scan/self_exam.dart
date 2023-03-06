@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hicons/flutter_hicons.dart';
+import 'package:intellibra/src/app/assets.dart';
+import 'package:intellibra/src/configs/configs.dart';
 import 'package:intellibra/src/extensions/build_context.dart';
 import 'package:intellibra/src/features/onboarding/thememode/cubit/theme_cubit.dart';
 
@@ -59,6 +61,7 @@ class SelfCheck extends StatelessWidget {
                         ],
                       ),
                     ),
+                    const IntellibraController(),
                     Container(
                       height: 70,
                       width: 70,
@@ -90,6 +93,51 @@ class SelfCheck extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class IntellibraController extends StatelessWidget {
+  const IntellibraController({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 1250),
+        curve: Curves.ease,
+        height: 125,
+        width: 125,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: context.scheme.onPrimary,
+          border: Border.all(
+            width: 3.50,
+            color: Palette.primary,
+          ),
+          boxShadow: const [
+            BoxShadow(
+              blurRadius: 15,
+              offset: Offset(4, -4),
+              color: Palette.primary,
+            ),
+            BoxShadow(
+              blurRadius: 15,
+              offset: Offset(-4, 4),
+              color: Palette.primary,
+            )
+          ],
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Image.asset(
+            Assets.assetsIconsWoman,
+            height: 100,
+            width: 100,
+            //  fit: BoxFit.contain,
+          ),
+        ),
+      ),
     );
   }
 }
