@@ -98,6 +98,12 @@ class IntellibraTheme extends ThemeExtension<IntellibraTheme> {
       chipTheme: ChipThemeData(
         backgroundColor: isLight ? neutralColor : colorScheme.surface,
       ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        backgroundColor: isLight ? neutralColor : colorScheme.surface,
+      ),
+      navigationBarTheme: NavigationBarThemeData(
+        backgroundColor: isLight ? neutralColor : colorScheme.surface,
+      ),
     );
   }
 
