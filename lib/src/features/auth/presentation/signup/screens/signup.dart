@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hicons/flutter_hicons.dart';
 import 'package:intellibra/src/common/common.dart';
 import 'package:intellibra/src/common/widgets/akila_input.dart';
+import 'package:intellibra/src/common/widgets/mark.dart';
 import 'package:intellibra/src/extensions/build_context.dart';
 import 'package:intellibra/src/extensions/num.dart';
 import 'package:pinput/pinput.dart';
@@ -88,7 +89,7 @@ class _CreateAccountState extends State<CreateAccount> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const FlutterLogo(),
+            const TradeMark(),
             const Spacer(),
             // Dropdown menu for language
             Expanded(
@@ -191,7 +192,7 @@ class _CreateAccountState extends State<CreateAccount> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const FlutterLogo(),
+            const TradeMark(),
             const Spacer(),
             // Dropdown menu for language
             Expanded(
@@ -266,7 +267,7 @@ class _CreateAccountState extends State<CreateAccount> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const FlutterLogo(),
+            const TradeMark(),
             const Spacer(),
             // Dropdown menu for language
             Expanded(
