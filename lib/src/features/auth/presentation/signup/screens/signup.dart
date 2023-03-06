@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hicons/flutter_hicons.dart';
 import 'package:intellibra/src/common/common.dart';
-import 'package:intellibra/src/common/widgets/akila_input.dart';
+import 'package:intellibra/src/common/widgets/intellibra_input.dart';
 import 'package:intellibra/src/common/widgets/mark.dart';
 import 'package:intellibra/src/extensions/build_context.dart';
 import 'package:intellibra/src/extensions/num.dart';
