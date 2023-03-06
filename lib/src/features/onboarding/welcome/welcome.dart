@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intellibra/src/features/extensions/build_context.dart';
+import 'package:intellibra/src/extensions/build_context.dart';
 import 'package:intellibra/src/features/onboarding/thememode/cubit/theme_cubit.dart';
 
 class Welcome extends StatelessWidget {
