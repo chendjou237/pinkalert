@@ -1,23 +1,14 @@
-import 'package:akila/src/app/assets.dart';
-import 'package:akila/src/app/extensions/gap.dart';
-import 'package:akila/src/app/extensions/text_style.dart';
-import 'package:akila/src/app/extensions/theme.dart';
-import 'package:akila/src/features/auth/widgets/akila_button.dart';
-import 'package:akila/src/features/settings/widgets/action_tile.dart';
-import 'package:akila/src/features/settings/widgets/language_dialog.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hicons/flutter_hicons.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intellibra/src/common/common.dart';
+import 'package:intellibra/src/extensions/build_context.dart';
+import 'package:intellibra/src/extensions/num.dart';
+import 'package:intellibra/src/features/settings/widgets/action_tile.dart';
+import 'package:intellibra/src/features/settings/widgets/language_dialog.dart';
 
-class Settings extends ConsumerStatefulWidget {
+class Settings extends StatelessWidget {
   const Settings({super.key});
-
-  @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _SettingsState();
-}
-
-class _SettingsState extends ConsumerState<Settings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,47 +16,48 @@ class _SettingsState extends ConsumerState<Settings> {
         child: Column(
           children: [
             34.vGap,
-            Center(
-              child: Image.asset(Assets.assetsImagesWomanPp),
+            const Center(
+              child: FlutterLogo(),
             ),
             4.vGap,
             Center(
-                child: Text(
-              "Lady Bug Miraculous",
-              style: context.theme.textTheme.bodyLarge!.bold,
-            )),
+              child: Text(
+                'Lady Bug Miraculous',
+                style: context.theme.textTheme.bodyLarge,
+              ),
+            ),
             14.vGap,
-            AkilaButton(
-              text: "Modifier le profil",
-              action: () {},
+            const IntellibraButton(
+              text: 'Action',
             ),
             34.vGap,
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8),
                   child: Text(
-                    "Akila actions",
-                    style: context.theme.textTheme.bodyMedium!.bold,
+                    'Akila actions',
+                    style: context.theme.textTheme.bodyMedium,
                   ),
                 ),
                 4.hGap,
                 const Expanded(
-                    child: Divider(
-                  color: Colors.grey,
-                  thickness: 1,
-                )),
+                  child: Divider(
+                    color: Colors.grey,
+                    thickness: 1,
+                  ),
+                ),
               ],
             ),
             ActionLabel(
-              label: "Recharger mon compte AKILA",
+              label: 'Recharger mon compte AKILA',
               onTap: () {},
               icon: Icons.add,
             ),
             ActionLabel(
               icon: Hicons.refresh_1,
-              label: "Historique Transactions",
+              label: 'Historique Transactions',
               onTap: () {},
             ),
             ActionLabel(
@@ -73,31 +65,33 @@ class _SettingsState extends ConsumerState<Settings> {
               label: "Langue de l'application",
               onTap: () {
                 showDialog(
-                    context: context,
-                    builder: (context) => const AkilaDialog());
+                  context: context,
+                  builder: (context) => const IntelliDialog(),
+                );
               },
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8),
                   child: Text(
-                    "Aide et Contacts",
-                    style: context.theme.textTheme.bodyMedium!.bold,
+                    'Aide et Contacts',
+                    style: context.theme.textTheme.bodyMedium,
                   ),
                 ),
                 4.hGap,
                 const Expanded(
-                    child: Divider(
-                  color: Colors.grey,
-                  thickness: 1,
-                )),
+                  child: Divider(
+                    color: Colors.grey,
+                    thickness: 1,
+                  ),
+                ),
               ],
             ),
             ActionLabel(
               icon: Hicons.profile_accepted_2,
-              label: "Devenir partenaire",
+              label: 'Devenir partenaire',
               onTap: () {},
             ),
             ActionLabel(
@@ -107,30 +101,28 @@ class _SettingsState extends ConsumerState<Settings> {
             ),
             ActionLabel(
               icon: Hicons.shield_tick,
-              label: "Politique de confidentialité",
+              label: 'Politique de confidentialité',
               onTap: () {},
             ),
             ActionLabel(
               icon: Hicons.work,
-              label: "Nous contacter",
+              label: 'Nous contacter',
               onTap: () {},
             ),
             ActionLabel(
               icon: Hicons.information_square,
-              label: "A propos",
+              label: 'A propos',
               onTap: () {
-                context.router.pushNamed('/home/historic');
+                context.router.pushNamed('/home');
               },
             ),
             34.vGap,
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(Assets.assetsIconsMascotte),
+              children: const [
+                //  Image.asset(Assets.assetsIconsMascotte),
                 Text(
-                  "Akila",
-                  style: context.theme.textTheme.bodyLarge!
-                      .copyWith(color: context.colorScheme.primary),
+                  'Intellibra',
                 ),
               ],
             ),
