@@ -6,8 +6,12 @@ import 'package:intellibra/src/features/onboarding/thememode/cubit/theme_cubit.d
 
 void main() {
   bootstrap(
-    () => BlocProvider(
-      create: (context) => ThemeCubit(),
+    () => MultiBlocProvider(
+      providers: [
+        BlocProvider.value(
+          value: ThemeCubit(),
+        )
+      ],
       child: const Intellibra(),
     ),
   );

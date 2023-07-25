@@ -115,7 +115,7 @@ class _CreateAccountState extends State<CreateAccount> {
                 color: context.scheme.primary.withOpacity(.5),
               ),
               child: Icon(
-                Hicons.profile_circle,
+                Hicons.profile_circle_bold,
                 size: 85,
                 color: context.scheme.onPrimary.withOpacity(.75),
               ),
@@ -196,7 +196,7 @@ class _CreateAccountState extends State<CreateAccount> {
         14.vGap,
         Center(
           child: Icon(
-            Hicons.lock_1,
+            Hicons.lock_1_bold,
             size: 64,
             color: context.scheme.primary,
           ),
@@ -267,7 +267,7 @@ class _CreateAccountState extends State<CreateAccount> {
         14.vGap,
         Center(
           child: Icon(
-            Hicons.lock_1,
+            Hicons.lock_1_bold,
             size: 64,
             color: context.scheme.primary,
           ),
