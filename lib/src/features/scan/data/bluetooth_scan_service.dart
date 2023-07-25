@@ -26,6 +26,8 @@ class BluetoothScanService {
         .first;
   }
 
+  
+
   Stream<BluetoothAdapterState> get state => FlutterBluePlus.adapterState;
   BluetoothAdapterState get initial => BluetoothAdapterState.unknown;
   Future<void> turnBlueToothOn() async {

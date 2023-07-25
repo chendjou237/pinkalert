@@ -1,14 +1,30 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconly/iconly.dart';
+
 import 'package:intellibra/src/app/assets.dart';
 import 'package:intellibra/src/configs/palette.dart';
 import 'package:intellibra/src/extensions/build_context.dart';
 import 'package:intellibra/src/extensions/num.dart';
+import 'package:intellibra/src/features/scan/presentation/cubit/scan_cubit.dart';
 
 final _stateListener = ValueNotifier(false);
 
-class IntellibraController extends StatelessWidget {
+class IntellibraController extends StatefulWidget {
   const IntellibraController({super.key});
+
+  @override
+  State<IntellibraController> createState() => _IntellibraControllerState();
+}
+
+class _IntellibraControllerState extends State<IntellibraController> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    context.read<ScanCubit>().scanDevices();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -102,33 +118,95 @@ class _DeviceSearch extends StatelessWidget {
             4.vGap,
             const Text('Tap on any reachable device to connect....'),
             24.vGap,
-            for (int i = 0; i < 4; i++)
-              ListTile(
-                title: Text(
-                  'Intellibra-INC9X2',
-                  style: context.bodyLg.copyWith(fontWeight: FontWeight.bold),
-                ),
-                subtitle: Text('reachable'),
-                trailing: CircularProgressIndicator(
+            BlocBuilder<ScanCubit, ScanState>(
+              builder: (context, state) {
+                if (state is ScanDeviceInit) {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+                if (state is ScanDeviceSuccess) {
+                  return Column(
+                    children:
+                        state.devices.map((device) => DeviceTile(
+                          name: device.localName,
+                          subtitle: device.remoteId.toString(),
+                        )).toList(),
+                  );
+                }
+              
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+              },
+            ),
+            ListTile(
+              title: Text(
+                'Intellibra-INC9X2',
+                style: context.bodyLg.copyWith(fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text('reachable'),
+              trailing: CircularProgressIndicator(
+                color: context.scheme.primary,
+                strokeWidth: 1,
+                // valueColor:
+                //   AlwaysStoppedAnimation<Color>(context.scheme.secondary),
+              ),
+              leading: Container(
+                height: 50,
+                width: 50,
+                decoration: BoxDecoration(
                   color: context.scheme.primary,
-                  strokeWidth: 1,
-                  // valueColor:
-                  //   AlwaysStoppedAnimation<Color>(context.scheme.secondary),
+                  borderRadius: BorderRadius.circular(12),
                 ),
-                leading: Container(
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                    color: context.scheme.primary,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Icon(
-                    IconlyBroken.heart,
-                    color: context.scheme.onPrimary,
-                  ),
+                child: Icon(
+                  IconlyBroken.heart,
+                  color: context.scheme.onPrimary,
                 ),
-              )
+              ),
+            )
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class DeviceTile extends StatelessWidget {
+  const DeviceTile({
+    Key? key,
+    required this.name,
+    required this.subtitle,
+  }) : super(key: key);
+
+  final String name;
+  final String subtitle;
+  
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: Text(
+        name,
+        style: context.bodyLg.copyWith(fontWeight: FontWeight.bold),
+      ),
+      subtitle: Text(subtitle),
+      trailing: CircularProgressIndicator(
+        color: context.scheme.primary,
+        strokeWidth: 1,
+        // valueColor:
+        //   AlwaysStoppedAnimation<Color>(context.scheme.secondary),
+      ),
+      leading: Container(
+        height: 50,
+        width: 50,
+        decoration: BoxDecoration(
+          color: context.scheme.primary,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Icon(
+          IconlyBroken.heart,
+          color: context.scheme.onPrimary,
         ),
       ),
     );

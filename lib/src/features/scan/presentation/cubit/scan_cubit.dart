@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 import 'package:meta/meta.dart';
@@ -8,16 +10,16 @@ part 'scan_state.dart';
 
 class ScanCubit extends Cubit<ScanState> {
   final repo = ScanRepository();
+  StreamSubscription? _scanDevicesSubscription;
+
   ScanCubit() : super(ScanInitial());
 
   Future<void> requestPermission() async {
     emit(RequestPermissionInit());
     try {
-       await repo.permissionRequest();
-      
-        emit(RequestPermissionSuccess());
-      
-      
+      await repo.permissionRequest();
+
+      emit(RequestPermissionSuccess());
     } catch (e) {
       emit(RequestPermissionFailure(message: e.toString()));
     }
@@ -33,12 +35,26 @@ class ScanCubit extends Cubit<ScanState> {
     }
   }
 
-  Future<void> scanDevice() async {
+  Future<void> scanDevices() async {
     emit(ScanDeviceInit());
+
     try {
+      _scanDevicesSubscription =
+          Stream.periodic(Duration(seconds: 2)).asyncMap((_) async {
+        try {
       await repo.startScan();
-      final devices = await repo.service.connectedDevices;
-      emit(ScanDeviceSuccess(devices: devices));
+          final devices = await repo.service.connectedDevices;
+          emit(ScanDeviceSuccess(devices: devices));
+          return devices;
+        } catch (e) {
+                emit(ScanDeviceFailure(message: e.toString()));
+
+        }
+      }).listen((event) {
+        if (event != null) emit(ScanDeviceSuccess(devices: event));
+      });
+      /* final devices = await repo.service.connectedDevices;
+      emit(ScanDeviceSuccess(devices: devices)); */
     } catch (e) {
       emit(ScanDeviceFailure(message: e.toString()));
     }

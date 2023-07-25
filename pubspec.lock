@@ -394,10 +394,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_hicons
-      sha256: f34bf9185a073170a8dbae9e77abae9f4c72cde802e23884b7b280a1b73bc3ab
+      sha256: "6a0312ebd6fc6ea73575f905e474b31abb7d1aba24890401f2f1327ebae2204a"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.1"
+    version: "0.1.0"
   flutter_localizations:
     dependency: "direct main"
     description: flutter
