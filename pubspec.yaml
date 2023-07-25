@@ -26,8 +26,7 @@ dependencies:
   google_fonts: ^5.1.0
   hydrated_bloc: ^9.1.0
   iconly: ^1.0.1
-  intl: ^0.18.1
-  material_color_utilities: ^0.5.0
+  intl: ^0.18.0
   palette_generator: ^0.3.3+2
   path_provider: ^2.0.13
   permission_handler: ^10.4.3

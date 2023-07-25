@@ -41,7 +41,7 @@ class BluetoothScanService {
   Future<bool> requestPermission() async {
     try {
       if (Platform.isAndroid) {
-        [
+        await [
           Permission.location,
           Permission.storage,
           Permission.bluetooth,
@@ -60,15 +60,12 @@ class BluetoothScanService {
   }
 
   Future<void> scanDevice() async {
-   await  FlutterBluePlus.startScan(
-        timeout: const Duration(seconds: 15),
+    await FlutterBluePlus.startScan(
+        timeout: const Duration(seconds: 30),
         includeConnectedDevices: true,
         androidUsesFineLocation: false);
-     
-     
-   
-  
- /*    // Setup Listener for scan results
+
+    /*    // Setup Listener for scan results
     final subscription = FlutterBluePlus.scanResults.listen((results) {
       // do something with scan results
 
@@ -102,7 +99,5 @@ class BluetoothScanService {
     } catch (e) {
       throw BlueToothDisconnectException();
     }
-  } 
-
-
+  }
 }

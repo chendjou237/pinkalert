@@ -37,7 +37,6 @@ class ScanCubit extends Cubit<ScanState> {
 
   Future<void> scanDevices() async {
     emit(ScanDeviceInit());
-
     try {
       _scanDevicesSubscription =
           Stream.periodic(Duration(seconds: 2)).asyncMap((_) async {
