@@ -51,7 +51,6 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "org.xenora.intellibra"
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
@@ -86,13 +85,13 @@ android {
         }
         staging {
             dimension "default"
-            applicationIdSuffix ".stg"
-            manifestPlaceholders = [appName: "[STG] Intellibra"]
+            applicationIdSuffix ""
+            manifestPlaceholders = [appName: "Intellibra"]
         }
         development {
             dimension "default"
-            applicationIdSuffix ".dev"
-            manifestPlaceholders = [appName: "[DEV] Intellibra"]
+            applicationIdSuffix ""
+            manifestPlaceholders = [appName: "Intellibra"]
         }
     }
 
