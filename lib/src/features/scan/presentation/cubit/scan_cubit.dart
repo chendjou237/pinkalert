@@ -13,11 +13,9 @@ class ScanCubit extends Cubit<ScanState> {
   Future<void> requestPermission() async {
     emit(RequestPermissionInit());
     try {
-       await repo.permissionRequest();
-      
-        emit(RequestPermissionSuccess());
-      
-      
+      await repo.permissionRequest();
+
+      emit(RequestPermissionSuccess());
     } catch (e) {
       emit(RequestPermissionFailure(message: e.toString()));
     }
@@ -35,6 +33,7 @@ class ScanCubit extends Cubit<ScanState> {
 
   Future<void> scanDevice() async {
     emit(ScanDeviceInit());
+    
     try {
       await repo.startScan();
       final devices = await repo.service.connectedDevices;

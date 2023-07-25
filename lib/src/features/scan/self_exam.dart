@@ -7,6 +7,7 @@ import 'package:intellibra/src/configs/configs.dart';
 import 'package:intellibra/src/extensions/build_context.dart';
 import 'package:intellibra/src/features/onboarding/thememode/cubit/theme_cubit.dart';
 import 'package:intellibra/src/features/scan/presentation/widgets/intellibra_controller.dart';
+import 'package:intellibra/src/features/test.dart';
 
 class SelfCheck extends StatelessWidget {
   const SelfCheck({super.key});
@@ -45,7 +46,7 @@ class SelfCheck extends StatelessWidget {
                     IntellibraController(),
                     _IntellibraStateBox(
                       message: 'On',
-                      icon: Hicons.wifi_light_outline,
+                      icon: Hicons.wifi,
                     ),
                   ],
                 ),
@@ -69,15 +70,21 @@ class _IntellibraStateBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 70,
-      width: 70,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(14),
-          color: context.scheme.primary),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [Icon(icon), Text(message)],
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => FlutterBlueApp()));
+      },
+      child: Container(
+        height: 70,
+        width: 70,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(14),
+            color: context.scheme.primary),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [Icon(icon), Text(message)],
+        ),
       ),
     );
   }
