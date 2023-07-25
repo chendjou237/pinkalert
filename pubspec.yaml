@@ -17,15 +17,15 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.2
-  flutter_hicons: ^0.0.1
+  flutter_hicons: ^0.1.0
   flutter_localizations:
     sdk: flutter
   flutter_native_splash: ^2.2.18
   get_it: ^7.2.0
-  google_fonts: ^4.0.3
+  google_fonts: ^5.1.0
   hydrated_bloc: ^9.1.0
   iconly: ^1.0.1
-  intl: ^0.17.0
+  intl: ^0.18.0
   material_color_utilities: ^0.2.0
   palette_generator: ^0.3.3+2
   path_provider: ^2.0.13
@@ -40,7 +40,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   mocktail: ^0.3.0
-  very_good_analysis: ^4.0.0
+  very_good_analysis: ^5.0.0+1
 
 flutter:
   uses-material-design: true

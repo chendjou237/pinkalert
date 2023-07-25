@@ -59,7 +59,7 @@ class Settings extends StatelessWidget {
               icon: IconlyBroken.heart,
             ),
             ActionLabel(
-              icon: Hicons.lock_1,
+              icon: Hicons.lock_1_bold,
               label: 'Pin code',
               onTap: () {},
             ),
@@ -100,7 +100,7 @@ class Settings extends StatelessWidget {
               },
             ),
             ActionLabel(
-              icon: Hicons.information_square,
+              icon: Hicons.information_square_bold,
               label: 'Infos',
               onTap: () {
                 context.router.pushNamed('/home');
