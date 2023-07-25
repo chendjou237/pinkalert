@@ -46,7 +46,7 @@ class SelfCheck extends StatelessWidget {
                     IntellibraController(),
                     _IntellibraStateBox(
                       message: 'On',
-                      icon: Hicons.wifi,
+                      icon: Hicons.wifi_bold,
                     ),
                   ],
                 ),
