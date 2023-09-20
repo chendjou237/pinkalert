@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "org.xenora.intellibra" "\0"
-            VALUE "FileDescription", "intellibra" "\0"
+            VALUE "FileDescription", "Pink Alert" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "intellibra" "\0"
+            VALUE "InternalName", "Pink Alert" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2022 org.xenora.intellibra. All rights reserved." "\0"
             VALUE "OriginalFilename", "intellibra.exe" "\0"
-            VALUE "ProductName", "Intellibra" "\0"
+            VALUE "ProductName", "Pink Alert" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

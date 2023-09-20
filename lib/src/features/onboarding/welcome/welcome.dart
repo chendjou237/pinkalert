@@ -50,7 +50,7 @@ class Welcome extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        'Welcome to Intellibra',
+                        'Welcome to PinkAlert',
                         style: context.theme.textTheme.displaySmall!.copyWith(
                           color: context.scheme.onPrimary,
                         ),
@@ -67,7 +67,7 @@ class Welcome extends StatelessWidget {
                       ),
                       const Spacer(),
                       IntellibraButton(
-                        text: 'Take to Akila',
+                        text: 'Get Started',
                         color: context.scheme.primary,
                         action: () {
                           context.router.pushNamed('/home');
@@ -79,7 +79,7 @@ class Welcome extends StatelessWidget {
                         },
                         // icon: const Icon(Icons.add),
                         child: Text(
-                          'Sign Up',
+                          'personalized experience? Connect',
                           style:
                               context.theme.textTheme.headlineSmall!.copyWith(
                             fontSize: 14,

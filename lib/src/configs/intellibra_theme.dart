@@ -70,7 +70,7 @@ class IntellibraTheme extends ThemeExtension<IntellibraTheme> {
       extensions: [this],
       colorScheme: colorScheme,
       visualDensity: VisualDensity.adaptivePlatformDensity,
-      scaffoldBackgroundColor: isLight ? neutralColor : colorScheme.background,
+      scaffoldBackgroundColor: isLight ? neutralColor : neutralColor,
       textTheme: textTheme,
       tabBarTheme: TabBarTheme(
         labelColor: colorScheme.onSurface,
