@@ -10,7 +10,7 @@ import 'package:intellibra/src/features/settings/settings.dart';
 @AdaptiveAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
-    AutoRoute(
+    AutoRoute( 
       page: Welcome,
       initial: true,
       path: '/welcome',
