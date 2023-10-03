@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:intellibra/src/features/auth/presentation/signup/screens/signup.dart';
 import 'package:intellibra/src/features/awareness/screens/awareness.dart';
+import 'package:intellibra/src/features/home/presentation/pages/home_page.dart';
 import 'package:intellibra/src/features/onboarding/onboarding.dart';
-import 'package:intellibra/src/features/records/medical_records.dart';
 import 'package:intellibra/src/features/scan/home.dart';
 import 'package:intellibra/src/features/scan/self_exam.dart';
 import 'package:intellibra/src/features/settings/settings.dart';
@@ -10,7 +10,7 @@ import 'package:intellibra/src/features/settings/settings.dart';
 @AdaptiveAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
-    AutoRoute( 
+    AutoRoute(
       page: Welcome,
       initial: true,
       path: '/welcome',
@@ -33,6 +33,11 @@ import 'package:intellibra/src/features/settings/settings.dart';
       path: '/home',
       children: [
         AutoRoute(
+          page: Landing,
+          initial: true,
+          path: '',
+        ),
+        AutoRoute(
           page: SelfCheck,
           path: 'self-check',
         ),
@@ -40,13 +45,13 @@ import 'package:intellibra/src/features/settings/settings.dart';
           page: Awareness,
           path: 'awareness',
         ),
-        AutoRoute(
+        /* AutoRoute(
           page: IntelliRecords,
           path: 'medical-records',
-        ),
+        ), */
         AutoRoute(
-          page: Settings,
-          path: 'settings',
+          page: Profile,
+          path: 'Profile',
         ),
       ],
     ),

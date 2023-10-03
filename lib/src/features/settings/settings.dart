@@ -10,8 +10,8 @@ import 'package:intellibra/src/extensions/num.dart';
 import 'package:intellibra/src/features/settings/widgets/action_tile.dart';
 import 'package:intellibra/src/features/settings/widgets/language_dialog.dart';
 
-class Settings extends StatelessWidget {
-  const Settings({super.key});
+class Profile extends StatelessWidget {
+  const Profile({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -16,11 +16,12 @@ import 'package:flutter/material.dart' as _i9;
 import 'package:intellibra/src/features/auth/presentation/signup/screens/signup.dart'
     as _i2;
 import 'package:intellibra/src/features/awareness/screens/awareness.dart'
-    as _i5;
+    as _i6;
+import 'package:intellibra/src/features/home/presentation/pages/home_page.dart'
+    as _i4;
 import 'package:intellibra/src/features/onboarding/onboarding.dart' as _i1;
-import 'package:intellibra/src/features/records/medical_records.dart' as _i6;
 import 'package:intellibra/src/features/scan/home.dart' as _i3;
-import 'package:intellibra/src/features/scan/self_exam.dart' as _i4;
+import 'package:intellibra/src/features/scan/self_exam.dart' as _i5;
 import 'package:intellibra/src/features/settings/settings.dart' as _i7;
 
 class IntellibraRouter extends _i8.RootStackRouter {
@@ -59,28 +60,28 @@ class IntellibraRouter extends _i8.RootStackRouter {
         child: const _i3.Home(),
       );
     },
+    Landing.name: (routeData) {
+      return _i8.AdaptivePage<dynamic>(
+        routeData: routeData,
+        child: const _i4.Landing(),
+      );
+    },
     SelfCheck.name: (routeData) {
       return _i8.AdaptivePage<dynamic>(
         routeData: routeData,
-        child: const _i4.SelfCheck(),
+        child: const _i5.SelfCheck(),
       );
     },
     Awareness.name: (routeData) {
       return _i8.AdaptivePage<dynamic>(
         routeData: routeData,
-        child: const _i5.Awareness(),
+        child: const _i6.Awareness(),
       );
     },
-    IntelliRecords.name: (routeData) {
+    Profile.name: (routeData) {
       return _i8.AdaptivePage<dynamic>(
         routeData: routeData,
-        child: const _i6.IntelliRecords(),
-      );
-    },
-    Settings.name: (routeData) {
-      return _i8.AdaptivePage<dynamic>(
-        routeData: routeData,
-        child: const _i7.Settings(),
+        child: const _i7.Profile(),
       );
     },
   };
@@ -114,6 +115,11 @@ class IntellibraRouter extends _i8.RootStackRouter {
           path: '/home',
           children: [
             _i8.RouteConfig(
+              Landing.name,
+              path: '',
+              parent: Home.name,
+            ),
+            _i8.RouteConfig(
               SelfCheck.name,
               path: 'self-check',
               parent: Home.name,
@@ -124,13 +130,8 @@ class IntellibraRouter extends _i8.RootStackRouter {
               parent: Home.name,
             ),
             _i8.RouteConfig(
-              IntelliRecords.name,
-              path: 'medical-records',
-              parent: Home.name,
-            ),
-            _i8.RouteConfig(
-              Settings.name,
-              path: 'settings',
+              Profile.name,
+              path: 'Profile',
               parent: Home.name,
             ),
           ],
@@ -200,7 +201,19 @@ class Home extends _i8.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i4.SelfCheck]
+/// [_i4.Landing]
+class Landing extends _i8.PageRouteInfo<void> {
+  const Landing()
+      : super(
+          Landing.name,
+          path: '',
+        );
+
+  static const String name = 'Landing';
+}
+
+/// generated route for
+/// [_i5.SelfCheck]
 class SelfCheck extends _i8.PageRouteInfo<void> {
   const SelfCheck()
       : super(
@@ -212,7 +225,7 @@ class SelfCheck extends _i8.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i5.Awareness]
+/// [_i6.Awareness]
 class Awareness extends _i8.PageRouteInfo<void> {
   const Awareness()
       : super(
@@ -224,25 +237,13 @@ class Awareness extends _i8.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i6.IntelliRecords]
-class IntelliRecords extends _i8.PageRouteInfo<void> {
-  const IntelliRecords()
+/// [_i7.Profile]
+class Profile extends _i8.PageRouteInfo<void> {
+  const Profile()
       : super(
-          IntelliRecords.name,
-          path: 'medical-records',
+          Profile.name,
+          path: 'Profile',
         );
 
-  static const String name = 'IntelliRecords';
-}
-
-/// generated route for
-/// [_i7.Settings]
-class Settings extends _i8.PageRouteInfo<void> {
-  const Settings()
-      : super(
-          Settings.name,
-          path: 'settings',
-        );
-
-  static const String name = 'Settings';
+  static const String name = 'Profile';
 }

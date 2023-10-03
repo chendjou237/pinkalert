@@ -3,18 +3,31 @@ import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:intellibra/src/router/intellibra_router.gr.dart' as routes;
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: AutoTabsScaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: _handleFloatingActionButton,
+          child: const Icon(
+            IconlyBroken.chat,
+            size: 18,
+          ),
+        ),
         routes: const [
+          routes.Home(),
           routes.SelfCheck(),
           routes.Awareness(),
-          routes.IntelliRecords(),
-          routes.Settings(),
+      //    routes.IntelliRecords(),
+          routes.Profile(),
         ],
         builder: (context, child, animation) => ScaleTransition(
           scale: animation,
@@ -28,6 +41,7 @@ class Home extends StatelessWidget {
             currentIndex: router.activeIndex,
             onTap: (index) => router.setActiveIndex(index),
             type: BottomNavigationBarType.fixed,
+
             items: const [
               BottomNavigationBarItem(
                 icon: Icon(
@@ -63,6 +77,15 @@ class Home extends StatelessWidget {
             ],
           );
         },
+      ),
+    );
+  }
+
+  void _handleFloatingActionButton(){
+    //show a toast
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('Chatbot comming soon'),
       ),
     );
   }
