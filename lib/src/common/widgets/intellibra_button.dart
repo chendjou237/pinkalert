@@ -36,7 +36,7 @@ class IntellibraButton extends StatelessWidget {
             Text(
               text,
               style: context.bodyLg.copyWith(
-                color: context.scheme.onPrimary,
+                color: context.scheme.onPrimaryContainer,
                 fontWeight: FontWeight.bold,
               ),
             ),

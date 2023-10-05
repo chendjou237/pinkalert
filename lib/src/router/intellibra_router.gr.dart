@@ -115,8 +115,15 @@ class IntellibraRouter extends _i8.RootStackRouter {
           path: '/home',
           children: [
             _i8.RouteConfig(
-              Landing.name,
+              '#redirect',
               path: '',
+              parent: Home.name,
+              redirectTo: 'landing',
+              fullMatch: true,
+            ),
+            _i8.RouteConfig(
+              Landing.name,
+              path: 'landing',
               parent: Home.name,
             ),
             _i8.RouteConfig(
@@ -206,7 +213,7 @@ class Landing extends _i8.PageRouteInfo<void> {
   const Landing()
       : super(
           Landing.name,
-          path: '',
+          path: 'landing',
         );
 
   static const String name = 'Landing';

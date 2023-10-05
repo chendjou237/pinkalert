@@ -35,7 +35,7 @@ import 'package:intellibra/src/features/settings/settings.dart';
         AutoRoute(
           page: Landing,
           initial: true,
-          path: '',
+          path: 'landing',
         ),
         AutoRoute(
           page: SelfCheck,

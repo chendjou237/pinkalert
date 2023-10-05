@@ -15,18 +15,12 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: AutoTabsScaffold(
-        floatingActionButton: FloatingActionButton(
-          onPressed: _handleFloatingActionButton,
-          child: const Icon(
-            IconlyBroken.chat,
-            size: 18,
-          ),
-        ),
+        
         routes: const [
-          routes.Home(),
+          routes.Landing(),
           routes.SelfCheck(),
           routes.Awareness(),
-      //    routes.IntelliRecords(),
+      //  routes.IntelliRecords(),
           routes.Profile(),
         ],
         builder: (context, child, animation) => ScaleTransition(
@@ -48,23 +42,23 @@ class _HomeState extends State<Home> {
                   IconlyBroken.heart,
                   size: 18,
                 ),
-                label: 'selfcheck',
+                label: 'home',
               ),
               BottomNavigationBarItem(
                 icon: Icon(
-                  IconlyBroken.shield_done,
+                  IconlyBroken.scan,
                   size: 18,
                 ),
                 // backgroundColor: Palette.dark,
-                label: 'awareness',
+                label: 'self check',
               ),
               BottomNavigationBarItem(
                 icon: Icon(
-                  IconlyBroken.folder,
+                  IconlyBroken.info_circle,
                   size: 18,
                 ),
                 // backgroundColor: Palette.dark,
-                label: 'records',
+                label: 'news',
               ),
               BottomNavigationBarItem(
                 icon: Icon(
@@ -81,12 +75,5 @@ class _HomeState extends State<Home> {
     );
   }
 
-  void _handleFloatingActionButton(){
-    //show a toast
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Chatbot comming soon'),
-      ),
-    );
-  }
+
 }

@@ -1,90 +1,162 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_hicons/flutter_hicons.dart';
-import 'package:intellibra/src/app/assets.dart';
 import 'package:intellibra/src/configs/configs.dart';
-import 'package:intellibra/src/extensions/build_context.dart';
-import 'package:intellibra/src/features/onboarding/thememode/cubit/theme_cubit.dart';
-import 'package:intellibra/src/features/scan/presentation/widgets/intellibra_controller.dart';
-import 'package:intellibra/src/features/test.dart';
 
 class SelfCheck extends StatelessWidget {
   const SelfCheck({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // ignore: avoid_unnecessary_containers
-    return BlocBuilder<ThemeCubit, bool>(
-      builder: (BuildContext context, bool state) {
-        return const Scaffold(
-          // appBar: AppBar(
-          //   title: const Text('Intellibra Widgets'),
-          //   actions: [
-          //     CupertinoSwitch(
-          //       value: state,
-          //       activeColor: context.scheme.tertiary,
-          //       onChanged: (theme) {
-          //         state == true
-          //             ? context.read<ThemeCubit>().reset()
-          //             : context.read<ThemeCubit>().toggle();
-          //       },
-          //     ),
-          //   ],
-          // ),
-          body: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 14, vertical: 24),
-            child: Column(
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Breast Self-Check',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 16),
+            const Text(
+              'Performing regular self-checks is an important part of breast cancer prevention. Use the resources below to learn how to perform a self-check at home.',
+              style: TextStyle(
+                fontSize: 16,
+              ),
+            ),
+            const SizedBox(height: 24),
+            const Text(
+              'Choose Your Method',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 16),
+            Row(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    _IntellibraStateBox(
-                      message: '22%',
-                      icon: Hicons.battery_charging_bold,
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      // Navigate to graphic self-check page
+                    },
+                    child: Container(
+                      height: 200,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        image: const DecorationImage(
+                          opacity: .5,
+                          image: AssetImage(
+                            
+                            '/graphics.png',
+                          ),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      child: const Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Graphic Self-Check',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(height: 8),
+                            Text(
+                              'Learn how to perform a breast self-check using a graphic guide.',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
-                    IntellibraController(),
-                    _IntellibraStateBox(
-                      message: 'On',
-                      icon: Hicons.wifi_bold,
+                  ),
+                ),
+                const SizedBox(width: 16),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      // Navigate to video self-check page
+                    },
+                    child: Container(
+                      height: 200,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        image: const DecorationImage(
+                          opacity: .5,
+                          image: AssetImage('/videos.jpg'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      child: const Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Video Self-Check',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(height: 8),
+                            Text(
+                              'Learn how to perform a breast self-check by watching a video tutorial.',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
-                  ],
+                  ),
                 ),
               ],
             ),
-          ),
-        );
-      },
-    );
-  }
-}
-
-class _IntellibraStateBox extends StatelessWidget {
-  const _IntellibraStateBox({
-    required this.message,
-    required this.icon,
-  });
-
-  final String message;
-  final IconData icon;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => FlutterBlueApp()));
-      },
-      child: Container(
-        height: 70,
-        width: 70,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(14),
-            color: context.scheme.primary),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [Icon(icon), Text(message)],
+            const SizedBox(height: 24),
+            Center(
+              child: TextButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Coming Soon'),
+                    ),
+                  );
+                },
+                child: const Text(
+                  'What am I looking for?',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Palette.primary,
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Coming Soon'),
+            ),
+          );
+        },
+        child: const Icon(Icons.add_alert),
       ),
     );
   }
