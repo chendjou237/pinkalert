@@ -29,6 +29,13 @@ class Profile extends StatelessWidget {
                 style: context.theme.textTheme.bodyLarge,
               ),
             ),
+            2.vGap,
+            Center(
+              child: Text(
+                '690904940',
+                style: context.bodyMd,
+              ),
+            ),
             14.vGap,
             const IntellibraButton(
               text: 'Edit Profile',
@@ -54,15 +61,15 @@ class Profile extends StatelessWidget {
               ],
             ),
             ActionLabel(
-              label: 'Intellibra scans',
+              label: 'previous checks',
               onTap: () {},
-              icon: IconlyBroken.heart,
+              icon: IconlyBroken.calendar,
             ),
-            ActionLabel(
+           /*  ActionLabel(
               icon: Hicons.lock_1_bold,
-              label: 'Pin code',
+              label: '',
               onTap: () {},
-            ),
+            ), */
             ActionLabel(
               icon: Icons.language,
               label: "Langue de l'application",

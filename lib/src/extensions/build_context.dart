@@ -24,6 +24,10 @@ extension IntellibraBuildContextExtension on BuildContext {
         //fontWeight: FontWeight.w600,
         color: scheme.onBackground,
       );
+  TextStyle get titleMd => typography.titleMedium!.copyWith(
+        //fontWeight: FontWeight.w600,
+        color: scheme.onBackground,
+      );
   TextStyle get displayLg => typography.displayLarge!.copyWith(
         //fontWeight: FontWeight.w600,
         color: scheme.onBackground,

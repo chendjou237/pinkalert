@@ -1,3 +1,5 @@
+import 'package:intellibra/src/features/home/domain/entities/post_entity.dart';
+
 List<Map<String, String>> newnestPosts = [
   {
     'title': 'New Study Shows Promising Results in Breast Cancer Treatment',
@@ -139,3 +141,19 @@ List<Map<String, String>> allPosts = [
   },
   // Add 9 more posts here
 ];
+
+List<PostEntity> newnestPostsE (){
+  return newnestPosts.map((post) => PostEntity.fromMap(post)).toList();
+}
+
+List<PostEntity> popularPostsE (){
+  return popularPosts.map((post) => PostEntity.fromMap(post)).toList();
+}
+
+List<PostEntity> recommendedPostsE (){
+  return recommendedPosts.map((post) => PostEntity.fromMap(post)).toList();
+}
+
+List<PostEntity> allPostsE (){
+  return allPosts.map((post) => PostEntity.fromMap(post)).toList();
+}

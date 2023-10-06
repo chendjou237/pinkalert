@@ -1,7 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:intellibra/src/features/auth/presentation/signup/screens/signup.dart';
-import 'package:intellibra/src/features/awareness/screens/awareness.dart';
+import 'package:intellibra/src/features/news/screens/news_page.dart';
 import 'package:intellibra/src/features/home/presentation/pages/home_page.dart';
+import 'package:intellibra/src/features/home/presentation/pages/post.dart';
+import 'package:intellibra/src/features/home/presentation/pages/posts.dart';
 import 'package:intellibra/src/features/onboarding/onboarding.dart';
 import 'package:intellibra/src/features/scan/home.dart';
 import 'package:intellibra/src/features/scan/self_exam.dart';
@@ -29,6 +31,14 @@ import 'package:intellibra/src/features/settings/settings.dart';
       path: '/choose-theme',
     ),
     AutoRoute(
+      page: Post,
+      path: '/post',
+    ),
+    AutoRoute(
+      page: Posts,
+      path: '/posts',
+    ),
+    AutoRoute(
       page: Home,
       path: '/home',
       children: [
@@ -42,8 +52,8 @@ import 'package:intellibra/src/features/settings/settings.dart';
           path: 'self-check',
         ),
         AutoRoute(
-          page: Awareness,
-          path: 'awareness',
+          page: News,
+          path: 'news',
         ),
         /* AutoRoute(
           page: IntelliRecords,

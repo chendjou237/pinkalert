@@ -15,17 +15,17 @@ class TradeMark extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                'Intelli',
+                'Pink',
                 style: TextStyle(
-                  color: Palette.primary,
+                  color: Palette.secondaryTextColor,
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Text(
-                'Bra',
+                'Alert',
                 style: GoogleFonts.besley(
-                  color: Palette.secondaryTextColor,
+                  color: Palette.primary,
                   fontSize: 18,
                 ),
               ),

@@ -49,7 +49,6 @@ class SelfCheck extends StatelessWidget {
                         image: const DecorationImage(
                           opacity: .5,
                           image: AssetImage(
-                            
                             '/graphics.png',
                           ),
                           fit: BoxFit.cover,

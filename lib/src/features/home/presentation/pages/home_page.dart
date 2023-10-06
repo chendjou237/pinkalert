@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:intellibra/src/common/common.dart';
@@ -5,6 +6,11 @@ import 'package:intellibra/src/configs/intellibra_constants.dart';
 import 'package:intellibra/src/extensions/build_context.dart';
 import 'package:intellibra/src/extensions/num.dart';
 import 'package:intellibra/src/features/home/data/datasources/post_data.dart';
+import 'package:intellibra/src/features/home/domain/entities/post_entity.dart';
+import 'package:intellibra/src/features/home/presentation/widgets/article_post_widget.dart';
+import 'package:intellibra/src/features/home/presentation/widgets/posts_section_widget.dart';
+
+import 'package:intellibra/src/router/intellibra_router.gr.dart' as routes;
 
 class Landing extends StatefulWidget {
   const Landing({super.key});
@@ -62,7 +68,9 @@ class _LandingState extends State<Landing> {
               16.vGap,
               IntellibraButtonMedium(
                 text: 'self check now',
-                action: () {},
+                action: () {
+                  context.router.pushNamed('/home/self-check');
+                },
               ),
               32.vGap,
               Row(
@@ -72,17 +80,22 @@ class _LandingState extends State<Landing> {
                     style: context.titleLg,
                   ),
                   const Spacer(),
-                  Text(
-                    'View all',
-                    style: context.bodySm.copyWith(
-                      color: context.scheme.primary,
+                  GestureDetector(
+                    onTap: () {
+                      context.pushRoute(routes.Posts(posts: allPostsE()));
+                    },
+                    child: Text(
+                      'View all',
+                      style: context.bodySm.copyWith(
+                        color: context.scheme.primary,
+                      ),
                     ),
                   ),
                 ],
               ),
               16.vGap,
               PostSectionContentsWidget(
-                posts: newnestPosts,
+                posts: newnestPostsE(),
               ),
               32.vGap,
               Row(
@@ -92,17 +105,24 @@ class _LandingState extends State<Landing> {
                     style: context.titleLg,
                   ),
                   const Spacer(),
-                  Text(
-                    'View all',
-                    style: context.bodySm.copyWith(
-                      color: context.scheme.primary,
+                  GestureDetector(
+                    onTap: () {
+                      context.pushRoute(routes.Posts(posts: allPostsE()));
+                    },
+                    child: Text(
+                      'View all',
+                      style: context.bodySm.copyWith(
+                        color: context.scheme.primary,
+                      ),
                     ),
                   ),
                 ],
               ),
               16.vGap,
-              PostSectionContentsWidget(
-                posts: popularPosts,
+              GestureDetector(
+                child: PostSectionContentsWidget(
+                  posts: popularPostsE(),
+                ),
               ),
               32.vGap,
               Row(
@@ -112,84 +132,26 @@ class _LandingState extends State<Landing> {
                     style: context.titleLg,
                   ),
                   const Spacer(),
-                  Text(
-                    'View all',
-                    style: context.bodySm.copyWith(
-                      color: context.scheme.primary,
+                  GestureDetector(
+                    onTap: () {
+                      context.pushRoute(routes.Posts(posts: allPostsE()));
+                    },
+                    child: Text(
+                      'View all',
+                      style: context.bodySm.copyWith(
+                        color: context.scheme.primary,
+                      ),
                     ),
                   ),
                 ],
               ),
               16.vGap,
               PostSectionContentsWidget(
-                posts: recommendedPosts,
+                posts: recommendedPostsE(),
               ),
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class PostSectionContentsWidget extends StatelessWidget {
-  const PostSectionContentsWidget({
-    required this.posts,
-    super.key,
-  });
-
-  final List<Map<String, String>> posts;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 200,
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        itemCount: posts.length,
-        physics: const BouncingScrollPhysics(),
-        separatorBuilder: (context, index) => 32.hGap,
-        itemBuilder: (BuildContext context, int index) {
-          return Container(
-            height: 200,
-            width: 300,
-            foregroundDecoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(32),
-              gradient: LinearGradient(
-                end: Alignment.bottomCenter,
-                begin: Alignment.center,
-                colors: [
-                  Colors.black.withOpacity(0),
-                  Colors.black.withOpacity(1),
-                ],
-              ),
-            ),
-            decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(.2),
-                  blurRadius: 8,
-                  offset: const Offset(0, 4),
-                ),
-              ],
-              image: DecorationImage(
-                image: NetworkImage(posts[index]['imageLink']!),
-                fit: BoxFit.cover,
-              ),
-              borderRadius: BorderRadius.circular(32),
-            ),
-            padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 8),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: <Widget>[
-                Text(
-                  posts[index]['title']!,
-                  style: context.titleLg,
-                ),
-              ],
-            ),
-          );
-        },
       ),
     );
   }

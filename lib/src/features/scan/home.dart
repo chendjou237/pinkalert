@@ -15,13 +15,12 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: AutoTabsScaffold(
-        
-        routes: const [
-          routes.Landing(),
-          routes.SelfCheck(),
-          routes.Awareness(),
-      //  routes.IntelliRecords(),
-          routes.Profile(),
+        routes: [
+          const routes.Landing(),
+          const routes.SelfCheck(),
+          routes.News(),
+          //  routes.IntelliRecords(),
+          const routes.Profile(),
         ],
         builder: (context, child, animation) => ScaleTransition(
           scale: animation,
@@ -74,6 +73,4 @@ class _HomeState extends State<Home> {
       ),
     );
   }
-
-
 }
