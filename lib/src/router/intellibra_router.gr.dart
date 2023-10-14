@@ -101,10 +101,9 @@ class IntellibraRouter extends _i10.RootStackRouter {
       );
     },
     News.name: (routeData) {
-      final args = routeData.argsAs<NewsArgs>(orElse: () => const NewsArgs());
       return _i10.AdaptivePage<dynamic>(
         routeData: routeData,
-        child: _i8.News(key: args.key),
+        child: const _i8.News(),
       );
     },
     Profile.name: (routeData) {
@@ -117,12 +116,6 @@ class IntellibraRouter extends _i10.RootStackRouter {
 
   @override
   List<_i10.RouteConfig> get routes => [
-        _i10.RouteConfig(
-          '/#redirect',
-          path: '/',
-          redirectTo: '/welcome',
-          fullMatch: true,
-        ),
         _i10.RouteConfig(
           Welcome.name,
           path: '/welcome',
@@ -149,7 +142,7 @@ class IntellibraRouter extends _i10.RootStackRouter {
         ),
         _i10.RouteConfig(
           Home.name,
-          path: '/home',
+          path: '/',
           children: [
             _i10.RouteConfig(
               '#redirect',
@@ -315,7 +308,7 @@ class Home extends _i10.PageRouteInfo<void> {
   const Home({List<_i10.PageRouteInfo>? children})
       : super(
           Home.name,
-          path: '/home',
+          path: '/',
           initialChildren: children,
         );
 
@@ -348,26 +341,14 @@ class SelfCheck extends _i10.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i8.News]
-class News extends _i10.PageRouteInfo<NewsArgs> {
-  News({_i12.Key? key})
+class News extends _i10.PageRouteInfo<void> {
+  const News()
       : super(
           News.name,
           path: 'news',
-          args: NewsArgs(key: key),
         );
 
   static const String name = 'News';
-}
-
-class NewsArgs {
-  const NewsArgs({this.key});
-
-  final _i12.Key? key;
-
-  @override
-  String toString() {
-    return 'NewsArgs{key: $key}';
-  }
 }
 
 /// generated route for

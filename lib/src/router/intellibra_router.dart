@@ -14,7 +14,7 @@ import 'package:intellibra/src/features/settings/settings.dart';
   routes: <AutoRoute>[
     AutoRoute(
       page: Welcome,
-      initial: true,
+     
       path: '/welcome',
     ),
     AutoRoute(
@@ -40,7 +40,8 @@ import 'package:intellibra/src/features/settings/settings.dart';
     ),
     AutoRoute(
       page: Home,
-      path: '/home',
+      path: '/',
+      
       children: [
         AutoRoute(
           page: Landing,

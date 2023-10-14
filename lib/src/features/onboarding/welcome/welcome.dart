@@ -58,7 +58,7 @@ class Welcome extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(right: 120),
                         child: Text(
-                          'Scan hoha',
+                          'The Breast Cancer Awareness App, \nthat helps you stay informed and \nget the help you need.',
                           style: context.theme.textTheme.bodyMedium!.copyWith(
                             color: context.scheme.onBackground,
                             fontSize: 14,
@@ -73,7 +73,7 @@ class Welcome extends StatelessWidget {
                           context.router.pushNamed('/home');
                         },
                       ),
-                      TextButton(
+                      /*  TextButton(
                         onPressed: () {
                           context.router.pushNamed('/create-account');
                         },
@@ -86,7 +86,7 @@ class Welcome extends StatelessWidget {
                             color: context.scheme.onPrimary,
                           ),
                         ),
-                      ),
+                      ), */
                       const SizedBox(height: 20),
                     ],
                   ),

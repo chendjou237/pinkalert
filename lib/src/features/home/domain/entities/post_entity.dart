@@ -20,6 +20,7 @@ class PostEntity {
   final String title;
   final String image;
   final String description;
+  
 
   Map<String, dynamic> toMap() {
     return {

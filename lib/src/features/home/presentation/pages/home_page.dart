@@ -6,8 +6,6 @@ import 'package:intellibra/src/configs/intellibra_constants.dart';
 import 'package:intellibra/src/extensions/build_context.dart';
 import 'package:intellibra/src/extensions/num.dart';
 import 'package:intellibra/src/features/home/data/datasources/post_data.dart';
-import 'package:intellibra/src/features/home/domain/entities/post_entity.dart';
-import 'package:intellibra/src/features/home/presentation/widgets/article_post_widget.dart';
 import 'package:intellibra/src/features/home/presentation/widgets/posts_section_widget.dart';
 
 import 'package:intellibra/src/router/intellibra_router.gr.dart' as routes;

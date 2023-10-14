@@ -65,7 +65,7 @@ class Profile extends StatelessWidget {
               onTap: () {},
               icon: IconlyBroken.calendar,
             ),
-           /*  ActionLabel(
+            /*  ActionLabel(
               icon: Hicons.lock_1_bold,
               label: '',
               onTap: () {},

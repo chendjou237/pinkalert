@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
           const routes.SelfCheck(),
           routes.News(),
           //  routes.IntelliRecords(),
-          const routes.Profile(),
+          // const routes.Profile(),
         ],
         builder: (context, child, animation) => ScaleTransition(
           scale: animation,
