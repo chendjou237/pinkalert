@@ -25,7 +25,7 @@ class Post extends StatelessWidget {
                 alignment: Alignment.bottomLeft,
                 padding: const EdgeInsets.symmetric(
                   horizontal: 8,
-                  vertical: 8,
+                  vertical: 16,
                 ),
                 foregroundDecoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -45,7 +45,7 @@ class Post extends StatelessWidget {
                 ),
                 child: Text(
                   title,
-                  style: context.titleLg,
+                  style: context.titleLg.copyWith(color: context.scheme.primary),
                 ),
               ),
             ),

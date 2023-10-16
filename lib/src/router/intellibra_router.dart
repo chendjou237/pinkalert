@@ -6,7 +6,9 @@ import 'package:intellibra/src/features/home/presentation/pages/post.dart';
 import 'package:intellibra/src/features/home/presentation/pages/posts.dart';
 import 'package:intellibra/src/features/onboarding/onboarding.dart';
 import 'package:intellibra/src/features/scan/home.dart';
-import 'package:intellibra/src/features/scan/self_exam.dart';
+import 'package:intellibra/src/features/scan/presentation/screens/graphics_guided_chat.dart';
+import 'package:intellibra/src/features/scan/presentation/screens/self_exam.dart';
+import 'package:intellibra/src/features/scan/presentation/screens/video_guided_check.dart';
 import 'package:intellibra/src/features/settings/settings.dart';
 
 @AdaptiveAutoRouter(
@@ -14,7 +16,6 @@ import 'package:intellibra/src/features/settings/settings.dart';
   routes: <AutoRoute>[
     AutoRoute(
       page: Welcome,
-     
       path: '/welcome',
     ),
     AutoRoute(
@@ -35,13 +36,20 @@ import 'package:intellibra/src/features/settings/settings.dart';
       path: '/post',
     ),
     AutoRoute(
+      page: BreastCancerGraphicsSelfCheckPage,
+      path: '/graphics-self-check',
+    ),
+    AutoRoute(
+      page: BreastCancerSelfCheckVideoPage,
+      path: '/video-self-check',
+    ),
+    AutoRoute(
       page: Posts,
       path: '/posts',
     ),
     AutoRoute(
       page: Home,
       path: '/',
-      
       children: [
         AutoRoute(
           page: Landing,

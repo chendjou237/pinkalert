@@ -29,7 +29,7 @@ class NewsWidget extends StatelessWidget {
             children: <Widget>[
               Text(
                 post.title,
-                style: context.theme.textTheme.titleLarge,
+                style: context.theme.textTheme.titleMedium!.copyWith(color: context.scheme.primary),
               ),
               10.vGap,
               Text(

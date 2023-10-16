@@ -59,14 +59,14 @@ class _HomeState extends State<Home> {
                 // backgroundColor: Palette.dark,
                 label: 'news',
               ),
-              BottomNavigationBarItem(
+            /*   BottomNavigationBarItem(
                 icon: Icon(
                   IconlyBroken.user_2,
                   size: 18,
                 ),
                 // backgroundColor: Palette.dark,
                 label: 'profile',
-              ),
+              ), */
             ],
           );
         },

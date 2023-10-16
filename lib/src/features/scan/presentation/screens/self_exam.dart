@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:intellibra/src/configs/configs.dart';
 
@@ -38,9 +39,10 @@ class SelfCheck extends StatelessWidget {
             Row(
               children: [
                 Expanded(
-                  child: GestureDetector(
+                  child: InkWell(
                     onTap: () {
                       // Navigate to graphic self-check page
+                      context.router.pushNamed('/graphics-self-check');
                     },
                     child: Container(
                       height: 200,
@@ -82,9 +84,10 @@ class SelfCheck extends StatelessWidget {
                 ),
                 const SizedBox(width: 16),
                 Expanded(
-                  child: GestureDetector(
+                  child: InkWell(
                     onTap: () {
                       // Navigate to video self-check page
+                      context.router.pushNamed('/video-self-check');
                     },
                     child: Container(
                       height: 200,

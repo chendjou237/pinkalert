@@ -142,18 +142,18 @@ List<Map<String, String>> allPosts = [
   // Add 9 more posts here
 ];
 
-List<PostEntity> newnestPostsE (){
-  return newnestPosts.map((post) => PostEntity.fromMap(post)).toList();
+List<PostEntity> newnestPostsE() {
+  return newnestPosts.map(PostEntity.fromMap).toList();
 }
 
-List<PostEntity> popularPostsE (){
-  return popularPosts.map((post) => PostEntity.fromMap(post)).toList();
+List<PostEntity> popularPostsE() {
+  return popularPosts.map(PostEntity.fromMap).toList();
 }
 
-List<PostEntity> recommendedPostsE (){
-  return recommendedPosts.map((post) => PostEntity.fromMap(post)).toList();
+List<PostEntity> recommendedPostsE() {
+  return recommendedPosts.map(PostEntity.fromMap).toList();
 }
 
-List<PostEntity> allPostsE (){
-  return allPosts.map((post) => PostEntity.fromMap(post)).toList();
+List<PostEntity> allPostsE() {
+  return allPosts.map(PostEntity.fromMap).toList();
 }
