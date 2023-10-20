@@ -1,17 +1,17 @@
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:intellibra/src/extensions/num.dart';
-import 'package:intellibra/src/features/home/domain/entities/post_entity.dart';
+import 'package:intellibra/src/features/home/data/models/post_model.dart';
 import 'package:intellibra/src/features/home/presentation/widgets/article_post_widget.dart';
 import 'package:intellibra/src/router/intellibra_router.gr.dart' as routes;
+
 class PostSectionContentsWidget extends StatelessWidget {
   const PostSectionContentsWidget({
     required this.posts,
     super.key,
   });
 
-  final List<PostEntity> posts;
+  final List<PostModel> posts;
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,4 @@
-import 'package:intellibra/src/features/home/domain/entities/post_entity.dart';
+import 'package:intellibra/src/features/home/data/models/post_model.dart';
 
 List<Map<String, String>> newnestPosts = [
   {
@@ -142,18 +142,18 @@ List<Map<String, String>> allPosts = [
   // Add 9 more posts here
 ];
 
-List<PostEntity> newnestPostsE() {
-  return newnestPosts.map(PostEntity.fromMap).toList();
+List<PostModel> newnestPostsE() {
+  return newnestPosts.map(PostModel.fromMap).toList();
 }
 
-List<PostEntity> popularPostsE() {
-  return popularPosts.map(PostEntity.fromMap).toList();
+List<PostModel> popularPostsE() {
+  return popularPosts.map(PostModel.fromMap).toList();
 }
 
-List<PostEntity> recommendedPostsE() {
-  return recommendedPosts.map(PostEntity.fromMap).toList();
+List<PostModel> recommendedPostsE() {
+  return recommendedPosts.map(PostModel.fromMap).toList();
 }
 
-List<PostEntity> allPostsE() {
-  return allPosts.map(PostEntity.fromMap).toList();
+List<PostModel> allPostsE() {
+  return allPosts.map(PostModel.fromMap).toList();
 }

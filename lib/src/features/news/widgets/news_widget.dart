@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intellibra/src/extensions/build_context.dart';
 import 'package:intellibra/src/extensions/num.dart';
-import 'package:intellibra/src/features/home/domain/entities/post_entity.dart';
+import 'package:intellibra/src/features/home/data/models/post_model.dart';
 
 class NewsWidget extends StatelessWidget {
   const NewsWidget({
@@ -9,7 +9,7 @@ class NewsWidget extends StatelessWidget {
     super.key,
   });
 
-  final PostEntity post;
+  final PostModel post;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,8 @@ class NewsWidget extends StatelessWidget {
             children: <Widget>[
               Text(
                 post.title,
-                style: context.theme.textTheme.titleMedium!.copyWith(color: context.scheme.primary),
+                style: context.theme.textTheme.titleMedium!
+                    .copyWith(color: context.scheme.primary),
               ),
               10.vGap,
               Text(

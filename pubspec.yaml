@@ -11,6 +11,7 @@ dependencies:
   bloc: ^8.1.1
   cloud_firestore: ^4.4.3
   collection: ^1.17.0
+  connectivity_plus: ^5.0.1
   dartz: ^0.10.1
   equatable: ^2.0.5
   firebase_auth: ^4.2.9
@@ -30,6 +31,7 @@ dependencies:
   hydrated_bloc: ^9.1.0
   iconly: ^1.0.1
   intl: ^0.18.0
+  logger: ^2.0.2+1
   palette_generator: ^0.3.3+2
   path_provider: ^2.0.13
   permission_handler: ^10.4.3

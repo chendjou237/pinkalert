@@ -16,7 +16,7 @@ import 'package:flutter/cupertino.dart' as _i14;
 import 'package:flutter/material.dart' as _i13;
 import 'package:intellibra/src/features/auth/presentation/signup/screens/signup.dart'
     as _i2;
-import 'package:intellibra/src/features/home/domain/entities/post_entity.dart'
+import 'package:intellibra/src/features/home/data/models/post_model.dart'
     as _i15;
 import 'package:intellibra/src/features/home/presentation/pages/home_page.dart'
     as _i8;
@@ -321,7 +321,7 @@ class BreastCancerSelfCheckVideoRoute extends _i12.PageRouteInfo<void> {
 /// [_i6.Posts]
 class Posts extends _i12.PageRouteInfo<PostsArgs> {
   Posts({
-    required List<_i15.PostEntity> posts,
+    required List<_i15.PostModel> posts,
     _i14.Key? key,
   }) : super(
           Posts.name,
@@ -341,7 +341,7 @@ class PostsArgs {
     this.key,
   });
 
-  final List<_i15.PostEntity> posts;
+  final List<_i15.PostModel> posts;
 
   final _i14.Key? key;
 

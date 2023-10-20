@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intellibra/src/common/common.dart';
+import 'package:intellibra/src/core/common.dart';
 import 'package:intellibra/src/extensions/build_context.dart';
 import 'package:intellibra/src/features/onboarding/thememode/cubit/theme_cubit.dart';
 

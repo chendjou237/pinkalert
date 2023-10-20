@@ -2,20 +2,20 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:intellibra/src/extensions/build_context.dart';
 import 'package:intellibra/src/extensions/num.dart';
-import 'package:intellibra/src/features/home/domain/entities/post_entity.dart';
+import 'package:intellibra/src/features/home/data/models/post_model.dart';
 import 'package:intellibra/src/features/home/presentation/widgets/article_post_widget.dart';
 import 'package:intellibra/src/router/intellibra_router.gr.dart' as routes;
 
 class Posts extends StatefulWidget {
   const Posts({required this.posts, super.key});
-  final List<PostEntity> posts;
+  final List<PostModel> posts;
 
   @override
   _PostsState createState() => _PostsState();
 }
 
 class _PostsState extends State<Posts> {
-  List<PostEntity> _filteredPosts = [];
+  List<PostModel> _filteredPosts = [];
 
   final TextEditingController _searchController = TextEditingController();
 

@@ -51,7 +51,7 @@ class SelfCheck extends StatelessWidget {
                         image: const DecorationImage(
                           opacity: .5,
                           image: AssetImage(
-                            '/graphics.png',
+                            'graphics.png',
                           ),
                           fit: BoxFit.cover,
                         ),
@@ -95,7 +95,7 @@ class SelfCheck extends StatelessWidget {
                         borderRadius: BorderRadius.circular(8),
                         image: const DecorationImage(
                           opacity: .5,
-                          image: AssetImage('/videos.jpg'),
+                          image: AssetImage('videos.jpg'),
                           fit: BoxFit.cover,
                         ),
                       ),
