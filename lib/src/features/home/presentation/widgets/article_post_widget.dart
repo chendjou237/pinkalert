@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:intellibra/src/core/utils/logger.dart';
 import 'package:intellibra/src/extensions/build_context.dart';
 
 class ArticlePostWidget extends StatelessWidget {
@@ -38,6 +38,9 @@ class ArticlePostWidget extends StatelessWidget {
         ],
         image: DecorationImage(
           image: NetworkImage(imageLink),
+          onError: (exception, stackTrace) {
+            logE('Error loading image: ${exception.toString()}');
+          },
           fit: BoxFit.cover,
         ),
         borderRadius: BorderRadius.circular(32),

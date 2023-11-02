@@ -1,6 +1,6 @@
 class Assets {
   Assets._();
-  
+
   /// Assets for assetsIconsAppIcon
   /// assets/icons/app-icon.png
   static const String assetsIconsAppIcon = "assets/icons/app-icon.png";

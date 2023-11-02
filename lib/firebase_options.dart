@@ -47,31 +47,29 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDWGo35-3ufP8xs65FY31dXx_h0bGxfIag',
-    appId: '1:602426551207:web:9a3e30074355d91cfc6482',
-    messagingSenderId: '602426551207',
-    projectId: 'intellibra-ecb00',
-    authDomain: 'intellibra-ecb00.firebaseapp.com',
-    storageBucket: 'intellibra-ecb00.appspot.com',
-    measurementId: 'G-6CF7F7HWC8',
+    apiKey: 'AIzaSyCNu3spMVVUiTDjYgl05g2bd8f9Sy6Ro-Y',
+    appId: '1:317604373926:web:d6a17791d20cfb52249b67',
+    messagingSenderId: '317604373926',
+    projectId: 'intellibra-mobile',
+    authDomain: 'intellibra-mobile.firebaseapp.com',
+    storageBucket: 'intellibra-mobile.appspot.com',
+    measurementId: 'G-QPCRQ139GX',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBbvj4BpjWr_i1LCG8GbEJksnje1PQf7yA',
-    appId: '1:602426551207:android:360824a3dc9771befc6482',
-    messagingSenderId: '602426551207',
-    projectId: 'intellibra-ecb00',
-    storageBucket: 'intellibra-ecb00.appspot.com',
+    apiKey: 'AIzaSyB_MZLvIXQSCOA8Z8qNXbO31M3_x5Ov-Mw',
+    appId: '1:317604373926:android:53d924dafac36933249b67',
+    messagingSenderId: '317604373926',
+    projectId: 'intellibra-mobile',
+    storageBucket: 'intellibra-mobile.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCbDiY37f54GsHu4ps4szNJDam5YU0RUf0',
-    appId: '1:602426551207:ios:532aa0a5cbd4d009fc6482',
-    messagingSenderId: '602426551207',
-    projectId: 'intellibra-ecb00',
-    storageBucket: 'intellibra-ecb00.appspot.com',
-    androidClientId: '602426551207-c7rbmmquurjcihukqtu3pv707nrh2as3.apps.googleusercontent.com',
-    iosClientId: '602426551207-4t4a6vc6erdcnb5npvqubu1ejkhlsm8q.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDD6otPgCMRuKCDMTrx2DjBMSSxLllKYq4',
+    appId: '1:317604373926:ios:c5bae7ed2e9c6ce7249b67',
+    messagingSenderId: '317604373926',
+    projectId: 'intellibra-mobile',
+    storageBucket: 'intellibra-mobile.appspot.com',
     iosBundleId: 'org.xenora.intellibra.intellibra',
   );
 }

@@ -34,4 +34,3 @@ class ScanDeviceFailure extends ScanState {
   final String message;
   ScanDeviceFailure({required this.message});
 }
-

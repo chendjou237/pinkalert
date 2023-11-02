@@ -45,7 +45,8 @@ class Post extends StatelessWidget {
                 ),
                 child: Text(
                   title,
-                  style: context.titleLg.copyWith(color: context.scheme.primary),
+                  style:
+                      context.titleLg.copyWith(color: context.scheme.primary),
                 ),
               ),
             ),

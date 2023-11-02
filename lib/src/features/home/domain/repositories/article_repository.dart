@@ -1,10 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:intellibra/src/core/error/failure.dart';
-import 'package:intellibra/src/features/home/data/models/post_model.dart';
+import 'package:intellibra/src/core/utils/enums/articles_enum.dart';
+import 'package:intellibra/src/features/home/data/models/home_model.dart';
 
 abstract class ArticleRepository {
-  List<PostModel> getOurPreferenceArticles();
-  List<PostModel> getRecentArticles();
-  List<PostModel> getPopularArticles();
-  Future<Either<Failure, List<PostModel>>> getAllArticles();
+  Future<Either<Failure, HomeModel>> getLocalArticles(ArticlesEnum type);
+  Future<Either<Failure, HomeModel>> getRemoteArticles();
 }

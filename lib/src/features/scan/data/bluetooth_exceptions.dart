@@ -1,7 +1,8 @@
 class BlueToothTurnException implements Exception {
   final String message;
 
-  BlueToothTurnException([this.message = "the bluetooth couldn't be turned on"]);
+  BlueToothTurnException(
+      [this.message = "the bluetooth couldn't be turned on"]);
 }
 
 class BlueToothPermissionException implements Exception {

@@ -17,32 +17,36 @@ class PostSectionContentsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 200,
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        itemCount: posts.length,
-        physics: const BouncingScrollPhysics(),
-        separatorBuilder: (context, index) => 32.hGap,
-        itemBuilder: (BuildContext context, int index) {
-          return Hero(
-            tag: posts[index].title,
-            child: GestureDetector(
-              onTap: () {
-                context.pushRoute(
-                  routes.Post(
-                    title: posts[index].title,
-                    image: posts[index].image,
-                    description: posts[index].description,
+      child: posts.isEmpty
+          ? const Center(
+              child: Text('No Content Yet'),
+            )
+          : ListView.separated(
+              scrollDirection: Axis.horizontal,
+              itemCount: posts.length,
+              physics: const BouncingScrollPhysics(),
+              separatorBuilder: (context, index) => 32.hGap,
+              itemBuilder: (BuildContext context, int index) {
+                return Hero(
+                  tag: posts[index].title,
+                  child: GestureDetector(
+                    onTap: () {
+                      context.pushRoute(
+                        routes.Post(
+                          title: posts[index].title,
+                          image: posts[index].image,
+                          description: posts[index].description,
+                        ),
+                      );
+                    },
+                    child: ArticlePostWidget(
+                      title: posts[index].title,
+                      imageLink: posts[index].image,
+                    ),
                   ),
                 );
               },
-              child: ArticlePostWidget(
-                title: posts[index].title,
-                imageLink: posts[index].image,
-              ),
             ),
-          );
-        },
-      ),
     );
   }
 }

@@ -6,23 +6,23 @@ import 'package:flutter/foundation.dart';
 @immutable
 class PostModel {
   const PostModel({
-  required  this.title,
-  required  this.image,
-  required  this.description,
-  required  this.content,
-  required  this.points,
-  required  this.authorChoice,
-  required  this.createdAt,
+    this.title,
+    this.image,
+    this.description,
+    this.content,
+    this.points,
+    this.authorChoice,
+    this.createdAt,
   });
 
   factory PostModel.fromMap(Map<String, dynamic> data) => PostModel(
-        title: data['title'] as String? ?? '',
-        image: data['image'] as String? ?? '',
-        description: data['description'] as String? ?? '',
-        content: data['content'] as String? ?? '',
-        points: data['points'] as int? ?? 0,
-        authorChoice: data['authorChoice'] as bool? ?? false,
-        createdAt: data['createdAt'] as int? ?? 0,
+        title: data['title'] as String?,
+        image: data['image'] as String?,
+        description: data['description'] as String?,
+        content: data['content'] as String?,
+        points: data['points'] as int?,
+        authorChoice: data['authorChoice'] as bool?,
+        createdAt: data['createdAt'] as int?,
       );
 
   /// `dart:convert`
@@ -31,13 +31,13 @@ class PostModel {
   factory PostModel.fromJson(String data) {
     return PostModel.fromMap(json.decode(data) as Map<String, dynamic>);
   }
-  final String title;
-  final String image;
-  final String description;
-  final String content;
-  final int points;
-  final bool authorChoice;
-  final int createdAt;
+  final String? title;
+  final String? image;
+  final String? description;
+  final String? content;
+  final int? points;
+  final bool? authorChoice;
+  final int? createdAt;
 
   @override
   String toString() {

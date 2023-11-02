@@ -11,7 +11,7 @@ class BreastCancerGraphicsSelfCheckPage extends StatefulWidget {
 
 class _BreastCancerGraphicsSelfCheckPageState
     extends State<BreastCancerGraphicsSelfCheckPage> {
-      int _index = 0;
+  int _index = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,26 +42,26 @@ class _BreastCancerGraphicsSelfCheckPageState
               const SizedBox(height: 16),
               Stepper(
                 steps: steps,
-                  currentStep: _index,
-                  onStepTapped: (value) {
+                currentStep: _index,
+                onStepTapped: (value) {
+                  setState(() {
+                    _index = value;
+                  });
+                },
+                onStepCancel: () {
+                  if (_index > 0) {
                     setState(() {
-                      _index = value;
+                      _index -= 1;
                     });
-                  },
-      onStepCancel: () {
-        if (_index > 0) {
-          setState(() {
-            _index -= 1;
-          });
-        }
-      },
-      onStepContinue: () {
-        if (_index < 5) {
-          setState(() {
-            _index += 1;
-          });
-        }
-      },
+                  }
+                },
+                onStepContinue: () {
+                  if (_index < 5) {
+                    setState(() {
+                      _index += 1;
+                    });
+                  }
+                },
               ),
             ],
           ),

@@ -127,17 +127,18 @@ class _DeviceSearch extends StatelessWidget {
                 }
                 if (state is ScanDeviceSuccess) {
                   return Column(
-                    children:
-                        state.devices.map((device) => DeviceTile(
-                          name: device.localName,
-                          subtitle: device.remoteId.toString(),
-                        )).toList(),
+                    children: state.devices
+                        .map((device) => DeviceTile(
+                              name: device.localName,
+                              subtitle: device.remoteId.toString(),
+                            ))
+                        .toList(),
                   );
                 }
-              
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
+
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
               },
             ),
             ListTile(
@@ -181,7 +182,6 @@ class DeviceTile extends StatelessWidget {
 
   final String name;
   final String subtitle;
-  
 
   @override
   Widget build(BuildContext context) {

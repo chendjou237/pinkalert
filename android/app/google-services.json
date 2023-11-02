@@ -1,41 +1,34 @@
 {
   "project_info": {
-    "project_number": "602426551207",
-    "project_id": "intellibra-ecb00",
-    "storage_bucket": "intellibra-ecb00.appspot.com"
+    "project_number": "317604373926",
+    "project_id": "intellibra-mobile",
+    "storage_bucket": "intellibra-mobile.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:602426551207:android:360824a3dc9771befc6482",
+        "mobilesdk_app_id": "1:317604373926:android:53d924dafac36933249b67",
         "android_client_info": {
-          "package_name": "org.xenora.intellibra"
+          "package_name": "org.xenora.pinkalert"
         }
       },
       "oauth_client": [
         {
-          "client_id": "602426551207-isedolv1oorg3u1lufkt97o4grvpb0oo.apps.googleusercontent.com",
+          "client_id": "317604373926-i5dctqnd0kifsevl9k2ehk0ktr9sqgee.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBbvj4BpjWr_i1LCG8GbEJksnje1PQf7yA"
+          "current_key": "AIzaSyB_MZLvIXQSCOA8Z8qNXbO31M3_x5Ov-Mw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "602426551207-isedolv1oorg3u1lufkt97o4grvpb0oo.apps.googleusercontent.com",
+              "client_id": "317604373926-i5dctqnd0kifsevl9k2ehk0ktr9sqgee.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "602426551207-4t4a6vc6erdcnb5npvqubu1ejkhlsm8q.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "org.xenora.intellibra.intellibra"
-              }
             }
           ]
         }

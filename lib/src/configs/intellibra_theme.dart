@@ -69,12 +69,10 @@ class IntellibraTheme extends ThemeExtension<IntellibraTheme> {
       useMaterial3: true,
       extensions: [this],
       colorScheme: colorScheme,
-
       visualDensity: VisualDensity.adaptivePlatformDensity,
       scaffoldBackgroundColor: isLight ? neutralColor : colorScheme.background,
       textTheme: textTheme,
       tabBarTheme: TabBarTheme(
-        
         labelColor: colorScheme.onSurface,
         unselectedLabelColor: colorScheme.onSurface,
         indicator: BoxDecoration(
